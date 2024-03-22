@@ -39,7 +39,7 @@ function install_vimplus_on_ubuntu_debian()
 function install_vimplus_on_fedora()
 {
 	sudo dnf update
-	sudo dnf install -y vim ctags cscope gcc gcc-c++ automake kernel-devel cmake python3-devel
+	sudo dnf install -y vim vim-X11 ctags cscope gcc gcc-c++ automake kernel-devel cmake python3-devel
 }
 
 function copy_file_to_local()
@@ -47,6 +47,11 @@ function copy_file_to_local()
 	cp -rf vim $HOME/.vim
 	cp -rf vimrc $HOME/.vimrc
 	cp -rf vimrc.custom.config $HOME/.vimrc.custom.config
+
+	distro=`get_linux_distro`
+
+	if [ ${distro} == "fedora" ]; then
+		sed -i '$a\alias vim=vimx' ~/.bashrc
 }
 
 # open vim and input :PlugInstall
