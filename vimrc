@@ -60,7 +60,7 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 
 " ctags的配置 ctrl+f12快速生成tags
 map <F4> :!ctags -R --c-kinds=+p --fields=+iaS --extras=+q .<CR>
-" set tags+=/home/renhai/works/Linuxs/linux/tags
+set tags+=./tags;,tags
 
 " vim支持cscope
 map <F5> :!cscope -Rbkq<CR>
@@ -140,7 +140,7 @@ let g:Powerline_symbols='unicode'
 "-- Cscope setting --
 " 添加cscope数据库到当前vim
 if has("cscope")
-    set csprg=~/bin/cscope " 指定用来执行cscope的命令
+    set csprg=/usr/bin/cscope " 指定用来执行cscope的命令
     set csto=0 " 设置cstag命令查找次序：0先找cscope数据库再找标签文件；1先找标签文件再找cscope数据库
     set cst " 同时搜索cscope数据库和标签文件
     set cscopequickfix=s-,c-,d-,i-,t-,e- " 使用QuickFix窗口来显示cscope查找结果
