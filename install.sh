@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # 获取linux发行版名称
 function get_linux_distro()
@@ -33,7 +33,7 @@ function install_vimplus_on_linux()
 function install_vimplus_on_ubuntu_debian()
 {
 	sudo apt update
-	sudo apt install cscope universal-ctags vim-python* vim-gnome
+	sudo apt install cscope universal-ctags vim-python* python3-dev -y
 }
 
 function install_vimplus_on_fedora()
@@ -52,6 +52,7 @@ function copy_file_to_local()
 
 	if [ ${distro} == "fedora" ]; then
 		sed -i '$a\alias vim=vimx' ~/.bashrc
+	fi
 }
 
 # open vim and input :PlugInstall
@@ -67,9 +68,10 @@ function install_vim_plugin()
 # 安装ycm插件
 function install_ycm()
 {
-    git clone https://gitee.com/chxuan/YouCompleteMe-clang.git ~/.vim/plugged/YouCompleteMe
+    git clone https://github.com/ycm-core/YouCompleteMe.git  ~/.vim/plugged/YouCompleteMe
 
     cd ~/.vim/plugged/YouCompleteMe
+    git submodule update --init --recursive
     distro=`get_linux_distro`
     read -p "Please choose to compile ycm with python2 or python3, if there is a problem with the current selection, please choose another one. [2/3] " version
     if [[ $version == "2" ]]; then

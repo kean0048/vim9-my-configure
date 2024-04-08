@@ -77,7 +77,7 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'Lokaltog/vim-powerline'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
  
