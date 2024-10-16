@@ -112,6 +112,9 @@ function main()
     copy_file_to_local
     install_ycm
     install_vim_plugin
+	
+	cp ./ycm_extra_conf.py ~/.ycm_extra_conf.py
+
 }
 
 # 调用main函数
