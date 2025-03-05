@@ -95,6 +95,7 @@ function install_ycm()
 	    python3 ./install.py
 	}
     fi
+	cd -
 }
 
 # main函数
