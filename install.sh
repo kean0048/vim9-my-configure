@@ -33,7 +33,7 @@ function install_vimplus_on_linux()
 function install_vimplus_on_ubuntu_debian()
 {
 	sudo apt update
-	sudo apt install cscope universal-ctags vim-python* python3-dev -y
+	sudo apt install cscope universal-ctags vim-python* python3-dev vim-gtk3 -y
 }
 
 function install_vimplus_on_fedora()
