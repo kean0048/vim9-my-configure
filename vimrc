@@ -78,6 +78,8 @@ Plug 'Lokaltog/vim-powerline'
 Plug 'preservim/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'gergap/vim-ollama'
+Plug 'github/copilot.vim'
 
 call plug#end()
  
